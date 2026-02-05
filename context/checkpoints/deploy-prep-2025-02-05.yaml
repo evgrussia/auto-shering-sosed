@@ -1,0 +1,36 @@
+# Checkpoint: подготовка деплоя frontend на VPS (MCP deploy-vps)
+# Дата: 2025-02-05
+
+summary: |
+  Подготовлено приложение frontend к деплою на VPS: упаковано в Docker (multi-stage build + nginx),
+  выбран свободный порт 8091, подготовлены конфиги nginx и SSL для домена auto-shering-sosed.ru.
+  Разведка на сервере default (213.159.67.199) выполнена через MCP user-deploy-vps.
+
+artifacts:
+  - frontend/Dockerfile
+  - frontend/.dockerignore
+  - frontend/index.html
+  - frontend/src/main.tsx
+  - frontend/src/styles/fonts.css
+  - frontend/package.json (добавлены react, react-dom)
+  - docker-compose.yml
+  - deploy/nginx-auto-shering-sosed.ru.conf
+  - deploy/nginx-auto-shering-sosed.ru-http-only.conf
+  - deploy/RUNBOOK-MCP-DEPLOY.md
+
+decisions:
+  - Порт приложения на VPS: 8091 (свободен; заняты 8082–8090, 8010, 8001 и др.)
+  - Деплой только через Git: на сервере git pull, затем docker compose up; конфиги nginx копируются из репо
+  - SSL: Certbot (Let's Encrypt); сначала HTTP-only конфиг, затем certbot --nginx, при необходимости подмена на полный конфиг с HSTS и логами
+  - Docker: образ node:22-alpine (build) + nginx:alpine (serve), healthcheck по /health
+
+next_actions:
+  - Закоммитить и запушить изменения, на VPS выполнить шаги из deploy/RUNBOOK-MCP-DEPLOY.md через MCP execute-command
+  - При первом деплое: склонировать репо в /opt/auto-shering-sosed (или выбранный путь), затем build + nginx + certbot
+  - После выдачи SSL подменить конфиг на deploy/nginx-auto-shering-sosed.ru.conf при необходимости полных заголовков и логов
+
+blockers: []
+
+metadata:
+  created_by: Orchestrator Agent
+  created_at: "2025-02-05"
