@@ -1,0 +1,39 @@
+# Checkpoint: Discovery завершён
+metadata:
+  created_by: Orchestrator Agent
+  created_at: "2025-02-04"
+  phase: discovery
+
+summary: |
+  Выполнена полная стадия Discovery для Авто-Шеринг-Сосед: исследование конкурентов (RentRide, Делимобиль, Яндекс Драйв),
+  рынок и регуляторика, вендоры умных замков. На основе исследования сформированы конкурентные преимущества.
+  Созданы Vision, PRD, User Stories; бизнес-модель, стейкхолдеры, риски; план метрик и unit-экономика; user flows MVP.
+  MVP: бронирование + ручная передача ключей + верификация Госуслуги + рейтинги + задел под арбитраж.
+
+artifacts:
+  - docs/README.md
+  - docs/DISCOVERY-ROADMAP.md
+  - docs/research/competitor-analysis.md
+  - docs/research/market-and-regulation.md
+  - docs/research/smart-locks-vendors.md
+  - docs/product/vision.md
+  - docs/product/PRD.md
+  - docs/product/user-stories.md
+  - docs/business/business-model.md
+  - docs/business/stakeholders.md
+  - docs/business/risks.md
+  - docs/analytics/metrics-plan.md
+  - docs/analytics/unit-economics.md
+  - docs/ux/user-flows-mvp.md
+
+decisions:
+  - Конкурентные преимущества: Госуслуги, Telegram+домовые чаты, фокус соседи, арбитраж, (post-MVP) умные замки
+  - MVP без оплаты на платформе; комиссия 20-25% после ввода ЮKassa
+  - Верификация только проверка документов; умные замки и КАСКО — слоты в продукте
+
+next_actions:
+  - Архитектор: высокоуровневая архитектура (WebApp, API, интеграции Госуслуги)
+  - Coder: реализация MVP по PRD и user stories
+  - Уточнить формат интеграции с домовыми чатами (бот vs ссылка) с продуктом
+
+blockers: []
