@@ -1,137 +1,156 @@
-# Документация проекта «Авто-Шеринг-Сосед»
+---
+title: "Инвестору — Авто-Шеринг-Сосед"
+created_by: Product Agent
+created_at: "2025-02-06"
+---
 
-Единый каталог документов проекта: описание по категориям и типам со ссылками на файлы.
+# Авто-Шеринг-Сосед — для инвестора
 
-**Кратко о проекте:** P2P-каршеринг между соседями — сдавай машину, когда не используешь; бери у соседа, когда нужна. Умные замки, верификация через Госуслуги, КАСКО на время аренды. Платформа: Telegram WebApp.
-
-**Источник истины по контексту:** [context/project-brief.yaml](../context/project-brief.yaml)
+**P2P-аренда авто между соседями:** владелец зарабатывает на простаивающей машине, арендатор получает авто рядом и дешевле коммерческого каршеринга. Платформа обеспечивает верификацию через Госуслуги, рейтинги, арбитраж и (на следующем этапе) оплату и умные замки.
 
 ---
 
-## Оглавление
+## Кратко о проекте
 
-1. [По категориям](#по-категориям)
-2. [По типам документов](#по-типам-документов)
-3. [Сводная таблица](#сводная-таблица)
-
----
-
-## По категориям
-
-### Продукт (Product)
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **Vision** | Миссия, видение на 1–3 года, целевая аудитория, ценностное предложение, отличия от конкурентов, границы продукта | [product/vision.md](product/vision.md) |
-| **PRD** | Product Requirements Document: обзор, цели и метрики, роли, функциональные и нефункциональные требования, критерии приёмки MVP | [product/PRD.md](product/PRD.md) |
-| **User Stories** | Пользовательские истории по ролям: владелец авто, арендатор, общие/платформа | [product/user-stories.md](product/user-stories.md) |
-
-### Исследования (Research)
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **Анализ конкурентов** | P2P-сегмент, коммерческий каршеринг, сравнительная матрица, выводы для конкурентного преимущества | [research/competitor-analysis.md](research/competitor-analysis.md) |
-| **Рынок и регуляторика** | Рынок P2P аренды в РФ, регуляторика, риски для продукта | [research/market-and-regulation.md](research/market-and-regulation.md) |
-| **Вендоры умных замков** | Предварительное исследование: Smartcar, направления для РФ, рекомендации для продукта | [research/smart-locks-vendors.md](research/smart-locks-vendors.md) |
-
-### Бизнес (Business)
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **Бизнес-модель** | Canvas, монетизация, unit-экономика (целевая), масштабирование | [business/business-model.md](business/business-model.md) |
-| **Стейкхолдеры** | Внутренние, внешние (пользователи), партнёры и регуляторы, косвенные | [business/stakeholders.md](business/stakeholders.md) |
-| **Риски** | Реестр рисков: операционные, юридические, технические, рыночные | [business/risks.md](business/risks.md) |
-
-### Аналитика (Analytics)
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **План метрик** | Северная звезда, ключевые метрики, воронка и события, агрегаты, инструменты и хранение | [analytics/metrics-plan.md](analytics/metrics-plan.md) |
-| **Unit-экономика** | Модель комиссии, метрики на сделку, целевые ориентиры, издержки, чувствительность | [analytics/unit-economics.md](analytics/unit-economics.md) |
-
-### UX
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **User Flows MVP** | Регистрация и верификация, владелец (добавление авто, заявки), арендатор (поиск и бронирование), арбитраж, интеграция с домовыми чатами | [ux/user-flows-mvp.md](ux/user-flows-mvp.md) |
-
-### Дизайн (Design)
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **Промпты для Figma** | Концепт-промпты: лендинг, онбординг, ЛК, профиль, листинг, поиск, бронирование, умные замки, оплата, рейтинги, арбитраж, сообщения, домовые чаты | [design/figma-concept-prompts.md](design/figma-concept-prompts.md) |
-
-### Discovery и процесс
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **Discovery Roadmap** | План и последовательность фазы Discovery, зависимости, созданные артефакты | [DISCOVERY-ROADMAP.md](DISCOVERY-ROADMAP.md) |
-
-### Контекст и чекпоинты (Context)
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **Project Brief** | Уровень 0: идея, рынок, продукт, платформа, ключевые фичи, scope_decisions, discovery_next | [../context/project-brief.yaml](../context/project-brief.yaml) |
-| **Чекпоинт: Discovery** | Снимок состояния после фазы Discovery | [../context/checkpoints/discovery-2025-02-04.yaml](../context/checkpoints/discovery-2025-02-04.yaml) |
-| **Чекпоинт: Deploy prep** | Подготовка к деплою (2025-02-05) | [../context/checkpoints/deploy-prep-2025-02-05.yaml](../context/checkpoints/deploy-prep-2025-02-05.yaml) |
-
-### Деплой и инфраструктура (Deploy)
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **Runbook: деплой на VPS** | Деплой frontend через MCP deploy-vps: Git-only, Docker, nginx, домен auto-shering-sosed.ru | [../deploy/RUNBOOK-MCP-DEPLOY.md](../deploy/RUNBOOK-MCP-DEPLOY.md) |
-| **Nginx (HTTP+HTTPS)** | Конфиг nginx для auto-shering-sosed.ru с SSL | [../deploy/nginx-auto-shering-sosed.ru.conf](../deploy/nginx-auto-shering-sosed.ru.conf) |
-| **Nginx (только HTTP)** | Конфиг nginx без SSL | [../deploy/nginx-auto-shering-sosed.ru-http-only.conf](../deploy/nginx-auto-shering-sosed.ru-http-only.conf) |
-
-### Фронтенд (код и гайдлайны)
-
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **Guidelines** | Гайдлайны по коду/стилю фронтенда | [../frontend/guidelines/Guidelines.md](../frontend/guidelines/Guidelines.md) |
+| Параметр | Описание |
+|----------|----------|
+| **Категория** | MobilityTech / Sharing Economy |
+| **Платформа** | Telegram WebApp (доступ из мессенджера и домовых чатов) |
+| **Целевая аудитория** | 30M+ автовладельцев в РФ; владельцы (монетизация простоя) и арендаторы (аренда без корпоративных наклеек) |
+| **TAM** | порядка 100 млрд ₽ |
+| **Монетизация** | Комиссия платформы **20–25%** с каждой оплаченной аренды |
+| **Ниша** | «Соседи + Telegram + Госуслуги + умные замки» в РФ пока не занята; RentRide — 15% комиссия, фокус не на соседях |
 
 ---
 
-## По типам документов
+## Проблема и решение
 
-| Тип | Назначение | Документы |
-|-----|------------|-----------|
-| **Vision / стратегия** | Цели продукта, границы, успех | [vision.md](product/vision.md) |
-| **Требования** | Функциональные и нефункциональные требования, приёмка | [PRD.md](product/PRD.md), [user-stories.md](product/user-stories.md) |
-| **Исследования** | Рынок, конкуренты, регуляторика, вендоры | [competitor-analysis.md](research/competitor-analysis.md), [market-and-regulation.md](research/market-and-regulation.md), [smart-locks-vendors.md](research/smart-locks-vendors.md) |
-| **Бизнес** | Модель, стейкхолдеры, риски | [business-model.md](business/business-model.md), [stakeholders.md](business/stakeholders.md), [risks.md](business/risks.md) |
-| **Аналитика** | Метрики, трекинг, unit-экономика | [metrics-plan.md](analytics/metrics-plan.md), [unit-economics.md](analytics/unit-economics.md) |
-| **UX / сценарии** | Пользовательские потоки MVP | [user-flows-mvp.md](ux/user-flows-mvp.md) |
-| **Дизайн** | Промпты и концепты для Figma | [figma-concept-prompts.md](design/figma-concept-prompts.md) |
-| **Процесс** | Roadmap Discovery | [DISCOVERY-ROADMAP.md](DISCOVERY-ROADMAP.md) |
-| **Контекст** | Brief и чекпоинты | [project-brief.yaml](../context/project-brief.yaml), [checkpoints/](../context/checkpoints/) |
-| **Операции** | Деплой, nginx, гайдлайны | [RUNBOOK-MCP-DEPLOY.md](../deploy/RUNBOOK-MCP-DEPLOY.md), [Guidelines.md](../frontend/guidelines/Guidelines.md) |
+**Проблема:** Владельцы не монетизируют простой машины; арендаторы переплачивают за коммерческий каршеринг (Делимобиль, Яндекс Драйв — сутки от ~2500 ₽) и не имеют «соседского» доверия и удобства.
+
+**Решение:** Единая платформа, где соседи сдают и берут авто в аренду: верификация через Госуслуги, бронирование в Telegram, рейтинги и арбитраж (фото до/после). Цена для арендатора на **30–50% ниже** коммерческого каршеринга при комиссии платформы 20–25%.
 
 ---
 
-## Сводная таблица
+## Рынок и конкуренция
 
-| Категория | Файл | Тип |
-|-----------|------|-----|
-| Product | [product/vision.md](product/vision.md) | Vision |
-| Product | [product/PRD.md](product/PRD.md) | Requirements |
-| Product | [product/user-stories.md](product/user-stories.md) | Requirements |
-| Research | [research/competitor-analysis.md](research/competitor-analysis.md) | Research |
-| Research | [research/market-and-regulation.md](research/market-and-regulation.md) | Research |
-| Research | [research/smart-locks-vendors.md](research/smart-locks-vendors.md) | Research |
-| Business | [business/business-model.md](business/business-model.md) | Business |
-| Business | [business/stakeholders.md](business/stakeholders.md) | Business |
-| Business | [business/risks.md](business/risks.md) | Business |
-| Analytics | [analytics/metrics-plan.md](analytics/metrics-plan.md) | Analytics |
-| Analytics | [analytics/unit-economics.md](analytics/unit-economics.md) | Analytics |
-| UX | [ux/user-flows-mvp.md](ux/user-flows-mvp.md) | UX |
-| Design | [design/figma-concept-prompts.md](design/figma-concept-prompts.md) | Design |
-| Process | [DISCOVERY-ROADMAP.md](DISCOVERY-ROADMAP.md) | Process |
-| Context | [../context/project-brief.yaml](../context/project-brief.yaml) | Context |
-| Context | [../context/checkpoints/](../context/checkpoints/) | Context |
-| Deploy | [../deploy/RUNBOOK-MCP-DEPLOY.md](../deploy/RUNBOOK-MCP-DEPLOY.md) | Operations |
-| Deploy | [../deploy/nginx-auto-shering-sosed.ru.conf](../deploy/nginx-auto-shering-sosed.ru.conf) | Operations |
-| Frontend | [../frontend/guidelines/Guidelines.md](../frontend/guidelines/Guidelines.md) | Operations |
+- **P2P:** RentRide — 2000+ предложений, комиссия 15%; сильный в Москве. Мы делаем ставку на сегмент «соседи», верификацию через Госуслуги и продвижение через домовые/районные чаты.
+- **Коммерческий каршеринг:** Делимобиль, Яндекс Драйв, Ситидрайв — поминутная/суточная аренда; наша ценность — доверие, близость, цена и (post-MVP) умные замки без передачи ключей.
+
+Подробный разбор: [Анализ конкурентов](research/competitor-analysis.md), [Рынок и регуляторика](research/market-and-regulation.md).
 
 ---
 
-*Документ создан: Coder Agent | Дата: 2025-02-05*
+## Продукт
+
+### MVP (текущий фокус)
+
+- Регистрация/вход через Telegram.
+- **Верификация через Госуслуги** (проверка паспорта и ВУ).
+- Листинг авто: фото, характеристики, правила, цена, календарь.
+- Поиск и фильтры: город, даты, цена, класс авто.
+- Бронирование: заявка → подтверждение владельцем → статусы.
+- Передача ключей вручную (место/время в чате).
+- Рейтинги и отзывы после аренды.
+- Задел под арбитраж (фото до/после к бронированию).
+
+### Post-MVP
+
+- **Оплата через ЮKassa:** предоплата аренды, депозит/экcцесс, чеки 54-ФЗ.
+- **Умные замки:** открытие/закрытие через приложение (интеграция с вендором).
+- **КАСКО:** слот в продукте (партнёр уточняется).
+- Полный арбитраж: претензии, решение платформой, списание/возврат.
+- Уведомления в Telegram, опционально GPS-трекинг.
+
+Детальные требования и приёмка: [PRD](product/PRD.md), [User Stories](product/user-stories.md), [Сценарии MVP](ux/user-flows-mvp.md).
+
+---
+
+## Бизнес-модель и unit-экономика
+
+- **Источник дохода:** комиссия **20–25%** от суммы аренды (после ввода ЮKassa). Пример: 3000 ₽/сутки → платформа 600–750 ₽, владелец 2250–2400 ₽.
+- **Целевые метрики:** LTV/CAC > 3; рост доли повторных бронирований; маржинальность на сделку после вычета комиссии платёжной системы (2–3%) и операционных расходов.
+- **Масштабирование:** несколько городов → привлечение владельцев (чаты, сообщества) → рост листингов → рост арендаторов и бронирований → рост GMV и выручки платформы.
+
+Подробно: [Бизнес-модель](business/business-model.md), [Unit-экономика](analytics/unit-economics.md), [План метрик](analytics/metrics-plan.md).
+
+---
+
+## Ключевые преимущества
+
+| Преимущество | Описание |
+|--------------|----------|
+| **Верификация через Госуслуги** | Выше доверие, меньше трения по сравнению с ручной проверкой документов |
+| **Telegram + домовые чаты** | Привлечение и коммуникация в привычной среде; бот или ссылка в чат |
+| **Фокус «соседи»** | Доверие за счёт близости и рейтингов; возможность продвижения через чаты ЖК/районов |
+| **Арбитраж** | Фото до/после, претензии, регламент — защита владельца и прозрачность для арендатора |
+| **Цена** | На 30–50% ниже коммерческого каршеринга при сохранении места для комиссии 20–25% |
+| **(Post-MVP) Умные замки** | Опыт «как в каршеринге» без личной передачи ключей |
+
+Стратегия и границы продукта: [Vision](product/vision.md).
+
+---
+
+## Риски и митигация
+
+Риски систематизированы в реестре (операционные, юридические, технические, рыночные). Основные направления митигации:
+
+- **Плотность листингов:** запуск в городах с высоким спросом, работа с сообществами и чатами.
+- **Мошенничество и споры:** верификация владельцев, рейтинги, арбитраж, фото до/после; post-MVP — депозит/экcцесс через платформу.
+- **Регуляторика:** типовой договор аренды ТС, акт приёма-передачи; соблюдение 152-ФЗ, 54-ФЗ; слот КАСКО и консультация юриста.
+- **Конкуренция:** скорость вывода MVP, качество UX и арбитража, интеграция с чатами.
+
+Полный реестр: [Риски](business/risks.md). Стейкхолдеры: [Стейкхолдеры](business/stakeholders.md).
+
+---
+
+## Дорожная карта и статус
+
+- **Discovery:** завершён (Vision, PRD, бизнес-модель, риски, исследование рынка и вендоров умных замков).
+- **Текущая фаза:** подготовка к разработке/запуску MVP (бронирование, передача ключей вручную, верификация Госуслуги, рейтинги, задел под арбитраж).
+- **Далее:** запуск в пилотных городах → ввод ЮKassa и комиссии → умные замки и КАСКО (слоты в продукте).
+
+Обзор этапов: [DISCOVERY-ROADMAP](DISCOVERY-ROADMAP.md).
+
+---
+
+## Ссылки на бизнес-документацию
+
+Ниже — полный набор документов для due diligence и углублённого анализа.
+
+### Продукт и стратегия
+
+| Документ | Описание |
+|----------|----------|
+| [Vision](product/vision.md) | Миссия, видение на 1–3 года, целевая аудитория, ценностное предложение, отличия от конкурентов, границы продукта |
+| [PRD](product/PRD.md) | Product Requirements Document: цели, метрики, роли, функциональные и нефункциональные требования, критерии приёмки MVP |
+| [User Stories](product/user-stories.md) | Пользовательские сценарии и приоритизация |
+| [User Flows MVP](ux/user-flows-mvp.md) | Сценарии бронирования и арбитража для MVP |
+
+### Бизнес и аналитика
+
+| Документ | Описание |
+|----------|----------|
+| [Бизнес-модель](business/business-model.md) | Canvas, монетизация, unit-экономика (целевая), масштабирование |
+| [Unit-экономика](analytics/unit-economics.md) | Модель комиссии, метрики на сделку, целевые ориентиры, издержки, чувствительность |
+| [План метрик](analytics/metrics-plan.md) | Северная звезда, воронка, события для трекинга |
+| [Стейкхолдеры](business/stakeholders.md) | Внутренние, внешние (пользователи), партнёры и регуляторы |
+| [Риски](business/risks.md) | Реестр рисков: операционные, юридические, технические, рыночные; митигация |
+
+### Исследования
+
+| Документ | Описание |
+|----------|----------|
+| [Анализ конкурентов](research/competitor-analysis.md) | Конкуренты, цены, позиционирование |
+| [Рынок и регуляторика](research/market-and-regulation.md) | Рынок РФ, ГК РФ (аренда ТС), ОСАГО/КАСКО, 152-ФЗ, 54-ФЗ |
+| [Вендоры умных замков](research/smart-locks-vendors.md) | Исследование вендоров для post-MVP |
+
+### Прочее
+
+| Документ | Описание |
+|----------|----------|
+| [DISCOVERY-ROADMAP](DISCOVERY-ROADMAP.md) | Этапы Discovery и созданные артефакты |
+| [Figma / дизайн-концепт](design/figma-concept-prompts.md) | Промпты и концепт для UI |
+
+---
+
+*Документ создан: Product Agent | Дата: 2025-02-06*
